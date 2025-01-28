@@ -24,6 +24,8 @@
     <script>
         const cursorImage = document.getElementById('cursor-image');
 
+        const sound = new Audio('aa.mp3');
+
         document.addEventListener('mousemove', (e) => {
             const mouseX = e.clientX;
             const mouseY = e.clientY;
@@ -41,6 +43,7 @@
                 mouseY >= rectY1 && mouseY <= rectY2
             ) {
                 document.body.style.backgroundImage = "url('911post.png')";
+                sound.play();
             } else {
                 document.body.style.backgroundImage = "url('911.png')";
             }
