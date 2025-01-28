@@ -5,19 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fun event simulator</title>
         <style>
-        body {
-            cursor: url('plane.cur') 32 32, auto; 
-            
-           
+        body {            
             background-image: url('911.png'); 
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: 100% 100%;
         }
+        #cursor-image {
+            position: absolute;
+            pointer-events: none;
+            transition: transform 0.1s ease-out; 
+        }
     </style>
 </head>
 <body>
+    <img id="cursor-image" src="plane.png" alt="plane">
 
+    <script>
+        const cursorImage = document.getElementById('cursor-image');
+
+        document.addEventListener('mousemove', (e) => {
+            const mouseX = e.clientX;
+            const mouseY = e.clientY;
+
+            cursorImage.style.left = `${mouseX - cursorImage.width / 2}px`;
+            cursorImage.style.top = `${mouseY - cursorImage.height / 2}px`;
+        });
+    </script>
 
 </body>
 </html>
