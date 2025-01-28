@@ -31,5 +31,5 @@
     }
 
     // Start the countdown timer for a target time of 8:00 PM
-    startDailyCountdown(20, 0, 0); // 20:00:00
+    startDailyCountdown(22, 0, 0); // 20:00:00
 </script>
