@@ -30,6 +30,20 @@
 
             cursorImage.style.left = `${mouseX - cursorImage.width / 2}px`;
             cursorImage.style.top = `${mouseY - cursorImage.height / 2}px`;
+
+            const rectX1 = 75;   
+            const rectY1 = 105; 
+            const rectX2 = 525; 
+            const rectY2 = 1040; 
+
+            if (
+                mouseX >= rectX1 && mouseX <= rectX2 &&
+                mouseY >= rectY1 && mouseY <= rectY2
+            ) {
+                document.body.style.backgroundImage = "url('911.png')";
+            } else {
+                document.body.style.backgroundImage = "url('post911.png')";
+            }
         });
     </script>
 
