@@ -6,26 +6,65 @@
     <title>CHINA NUMBER ONE</title>
     <style>
       body{
-    background-image: url('china-flag-chinese.gif');
-    background-size: cover;
-    height: 100vh;
-    padding:0;
-    margin:0;
-    overflow: hidden;
-    overflow-y: scroll;
-}
+          background-image: url('china-flag-chinese.gif');
+          background-size: cover;
+          height: 100vh;
+          padding:0;
+          margin:0;
+          overflow: hidden;
+          overflow-y: scroll;
+    }
       body::-webkit-scrollbar {
-    display: none;
-}
+          display: none;
+    }
+      .music-button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #444;
+            color: white;
+        }
+      .music-button:hover {
+            background-color: #666;
+        }
     </style>
   </head>
   <body>
-    <audio src="rsits.mp3" autoplay loop></audio>
-
+    <audio id="music-player" controls>
+        <source id="music-source" src="rsits.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
     <h1>China is the greatest and most gratuitous nation in the world!</h1>
         <img src="ch1.jpg" alt="ch1">
     <h1>Our glorious leaders will lead this great nation to victory!</h1>
         <img src="mao.png" alt="mao">
         <img src="xij.jpg" alt="xij">
+    <h1>Enjoy a vast selection of beautiful Chinese Music!</h1>
+    <button class="music-button" onclick="changeMusic('rsits.mp3')">Play Song 1</button>
+    <button class="music-button" onclick="changeMusic('cch.mp3')">Play Song 2</button>
+    <button class="music-button" onclick="changeMusic('china1.mp3')">Play Song 3</button>
+    <button class="music-button" onclick="toggleMusic()">Play/Pause</button>
+
+    <script>
+        const audioPlayer = document.getElementById("music-player");
+        const musicSource = document.getElementById("music-source");
+
+        function changeMusic(song) {
+            musicSource.src = song;
+            audioPlayer.load();
+            audioPlayer.play();
+        }
+
+        function toggleMusic() {
+            if (audioPlayer.paused) {
+                audioPlayer.play();
+            } else {
+                audioPlayer.pause();
+            }
+        }
+    </script>
   </body>
 </html>
